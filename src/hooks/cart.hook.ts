@@ -46,7 +46,6 @@ export const useCart = () => {
 
   const clearItems = (id: number) => {
     const newCart = { ...cart }
-
     delete newCart[id]
     setCart(newCart)
   }
@@ -54,7 +53,6 @@ export const useCart = () => {
   const finalPrice = useMemo(() => {
     let finalPrice = 0
     Object.keys(cart).forEach(key => (finalPrice += cart[Number(key)].count * cart[Number(key)].price))
-
     return Math.round(finalPrice * 100) / 100
   }, [cart])
 

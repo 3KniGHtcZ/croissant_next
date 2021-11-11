@@ -2,7 +2,7 @@ import { useProductInfo } from '@api/api'
 import { CartContext } from '@contexts/cart.context'
 import { formatPrice } from '@utils/utils'
 import Image from 'next/image'
-import { useCallback, useContext } from 'react'
+import { useContext } from 'react'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl'
 import {
@@ -27,8 +27,8 @@ export const Product = ({ id }: ProductPropsType) => {
   const { cart, addItem, removeItem } = useContext(CartContext)
   const itemsInCart = cart[id]?.count
 
-  const handleAddItem = useCallback(() => addItem(id, product.price.full), [addItem, id, product])
-  const handleRemoveItem = useCallback(() => removeItem(id), [id, removeItem])
+  const handleAddItem = () => addItem(id, product.price.full)
+  const handleRemoveItem = () => removeItem(id)
 
   return (
     <ProductWrapper>

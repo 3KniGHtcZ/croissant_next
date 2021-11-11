@@ -1,6 +1,6 @@
 import { CartContext } from '@contexts/cart.context'
 import { formatPrice } from '@utils/utils'
-import { useCallback, useContext, useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import { FaShoppingCart, FaTrash } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl'
 import { usePopperTooltip } from 'react-popper-tooltip'
@@ -15,8 +15,6 @@ export const Cart = () => {
 
   const hasItems = useMemo(() => Object.keys(cart).length, [cart])
   const finalOverview = hasItems ? formatPrice(finalPrice) : 0
-
-  const handleClearCart = useCallback(clearCart, [clearCart])
 
   return (
     <>
@@ -34,7 +32,7 @@ export const Cart = () => {
               <CartOverview>
                 <FormattedMessage id="cartFinalPrice" values={{ value: finalOverview }} />
               </CartOverview>
-              <Clear onClick={handleClearCart}>
+              <Clear onClick={clearCart}>
                 <FaTrash size={16} style={TrashStyle} />
                 <FormattedMessage id="cartEmptyCart" />
               </Clear>
