@@ -1,13 +1,15 @@
 import { Page } from '@components/Page'
+import { messages } from 'i18n/messages'
+import { IntlProvider } from 'react-intl'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { createGlobalStyle } from 'styled-components'
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
+      refetchOnWindowFocus: false
+    }
+  }
 })
 
 const GlobalStyles = createGlobalStyle`
@@ -19,10 +21,12 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const Home = () => (
-  <QueryClientProvider client={queryClient}>
-    <GlobalStyles />
-    <Page />
-  </QueryClientProvider>
+  <IntlProvider messages={messages} locale="cs" defaultLocale="cs">
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyles />
+      <Page />
+    </QueryClientProvider>
+  </IntlProvider>
 )
 
 export default Home

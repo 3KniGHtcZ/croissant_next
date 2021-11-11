@@ -2,13 +2,18 @@ import { useProductInfo } from '@api/api'
 import { CartContext } from '@contexts/cart.context'
 import { formatPrice } from '@utils/utils'
 import Image from 'next/image'
-import React, { useCallback, useContext } from 'react'
+import { useCallback, useContext } from 'react'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import {
   Add,
-  AddNew, Buttons,
-  Content, Count, ImageWrapper,
-  Name, Price, ProductWrapper,
+  AddNew,
+  Buttons,
+  Content,
+  Count,
+  ImageWrapper,
+  Name,
+  Price,
+  ProductWrapper,
   Remove
 } from './product.styles'
 

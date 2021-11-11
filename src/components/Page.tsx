@@ -5,7 +5,7 @@ import { Product } from '@components/Product'
 import { CartContext } from '@contexts/cart.context'
 import { useCart } from '@hooks/cart.hook'
 import { normalizeSync } from 'normalize-diacritics'
-import React, { ChangeEvent, useMemo, useState } from 'react'
+import { ChangeEvent, useMemo, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 
 export const Page = () => {
@@ -15,8 +15,8 @@ export const Page = () => {
 
   const filteredData = useMemo(() => {
     if (searchQuery) {
-      return data.filter((product) =>
-        normalizeSync(product.name.toLowerCase()).includes(searchQuery)
+      return data.filter(product =>
+        normalizeSync(product.name.toLowerCase()).includes(normalizeSync(searchQuery).toLowerCase())
       )
     } else {
       return data

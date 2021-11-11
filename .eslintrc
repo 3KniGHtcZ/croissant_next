@@ -1,0 +1,16 @@
+{
+  "extends": ["next/core-web-vitals", "prettier", "plugin:react/jsx-runtime"],
+  "plugins": [
+    "simple-import-sort",
+    "unused-imports",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "import",
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
