@@ -4,7 +4,7 @@ import { useCallback, useContext, useMemo } from 'react'
 import { FaShoppingCart, FaTrash } from 'react-icons/fa'
 import { FormattedMessage } from 'react-intl'
 import { usePopperTooltip } from 'react-popper-tooltip'
-import { CartButton, CartOverview, Clear, Content } from './cart.styles'
+import { CartButton, CartOverview, Clear, Content, ShoppingCartStyle, TrashStyle } from './cart.styles'
 import { CartItem } from './CartItem'
 
 export const Cart = () => {
@@ -14,15 +14,15 @@ export const Cart = () => {
   })
 
   const hasItems = useMemo(() => Object.keys(cart).length, [cart])
-  const finalOverview = `${hasItems ? formatPrice(finalPrice) : 0} Kč`
+  const finalOverview = hasItems ? formatPrice(finalPrice) : 0
 
   const handleClearCart = useCallback(clearCart, [clearCart])
 
   return (
     <>
       <CartButton ref={setTriggerRef}>
-        <FaShoppingCart size={20} style={{ marginRight: '16px' }} />
-        {finalOverview}
+        <FaShoppingCart size={20} style={ShoppingCartStyle} />
+        <FormattedMessage id="cartButtonPrice" values={{ value: finalOverview }} />
       </CartButton>
       {visible && (
         <Content ref={setTooltipRef} {...getTooltipProps()}>
@@ -35,7 +35,7 @@ export const Cart = () => {
                 <FormattedMessage id="cartFinalPrice" values={{ value: finalOverview }} />
               </CartOverview>
               <Clear onClick={handleClearCart}>
-                <FaTrash size={16} style={{ marginRight: '8px' }} />
+                <FaTrash size={16} style={TrashStyle} />
                 <FormattedMessage id="cartEmptyCart" />
               </Clear>
             </>

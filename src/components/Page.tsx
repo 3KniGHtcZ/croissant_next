@@ -1,6 +1,6 @@
 import { useProducts } from '@api/api'
 import { Cart } from '@components/Cart'
-import { Content, Header, PageWrapper, Search } from '@components/page.styles'
+import { Content, GithubStyle, Header, PageWrapper, Search } from '@components/page.styles'
 import { Product } from '@components/Product'
 import { CartContext } from '@contexts/cart.context'
 import { useCart } from '@hooks/cart.hook'
@@ -10,10 +10,10 @@ import { FaGithub } from 'react-icons/fa'
 import { FormattedMessage, useIntl } from 'react-intl'
 
 export const Page = () => {
+  const intl = useIntl()
   const cart = useCart()
   const [searchQuery, setSearchQuery] = useState('')
   const { isLoading, isError, data } = useProducts()
-  const intl = useIntl()
 
   const filteredData = useMemo(() => {
     if (searchQuery) {
@@ -33,7 +33,7 @@ export const Page = () => {
     <CartContext.Provider value={cart}>
       <PageWrapper>
         <Header>
-          <FaGithub size={40} color="white" style={{ marginRight: '16px' }} />
+          <FaGithub size={40} color="white" style={GithubStyle} />
           <Search
             type="search"
             onChange={handleOnChange}

@@ -58,3 +58,5 @@ export const Search = styled.input`
     width: 100%;
   }
 `
+
+export const GithubStyle = { marginRight: '16px' }

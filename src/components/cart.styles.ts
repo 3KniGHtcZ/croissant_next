@@ -47,3 +47,6 @@ export const CartOverview = styled.div`
   text-align: right;
   width: calc(100% - 24px);
 `
+
+export const ShoppingCartStyle = { marginRight: '16px' }
+export const TrashStyle = { marginRight: '8px' }
