@@ -1,6 +1,6 @@
 import { CartContext } from '@contexts/cart.context'
 import { formatPrice } from '@utils/utils'
-import React, { useContext } from 'react'
+import React, { useContext, useMemo, useCallback } from 'react'
 import { FaShoppingCart, FaTrash } from 'react-icons/fa'
 import { usePopperTooltip } from 'react-popper-tooltip'
 import { CartButton, CartOverview, Clear, Content } from './cart.styles'
@@ -13,8 +13,10 @@ export const Cart = () => {
     trigger: 'click',
   })
 
-  const hasItems = Object.keys(cart).length
+  const hasItems = useMemo(() => Object.keys(cart).length, [cart])
   const finalOverview = `${hasItems ? formatPrice(finalPrice) : 0} Kč`
+
+  const handleClearCart = useCallback(() => clearCart(), [clearCart])
 
   return (
     <>
@@ -30,7 +32,7 @@ export const Cart = () => {
                 <CartItem id={Number(key)} key={`cart_item-${key}`} />
               ))}
               <CartOverview>{`Celková cena: ${finalOverview}`}</CartOverview>
-              <Clear onClick={() => clearCart()}>
+              <Clear onClick={handleClearCart}>
                 <FaTrash size={16} style={{ marginRight: '8px' }} />
                 Vyprázdnit košík
               </Clear>
