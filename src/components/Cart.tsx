@@ -1,11 +1,11 @@
 import { CartContext } from '@contexts/cart.context'
 import { formatPrice } from '@utils/utils'
-import { usePopperTooltip } from 'react-popper-tooltip'
-import { useContext, useMemo, useCallback } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { FaShoppingCart, FaTrash } from 'react-icons/fa'
+import { FormattedMessage } from 'react-intl'
+import { usePopperTooltip } from 'react-popper-tooltip'
 import { CartButton, CartOverview, Clear, Content } from './cart.styles'
 import { CartItem } from './CartItem'
-import { FormattedMessage } from 'react-intl'
 
 export const Cart = () => {
   const { cart, clearCart, finalPrice } = useContext(CartContext)

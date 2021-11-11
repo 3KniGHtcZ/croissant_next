@@ -1,3 +1,3 @@
 export const QUERY = {
-  PRODUCTS: 'productsData',
+  PRODUCTS: 'productsData'
 }

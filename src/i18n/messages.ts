@@ -5,5 +5,5 @@ export const messages = {
   cartFinalPrice: 'Celková cena: {value}',
   error: 'Jejda něco se pokazilo :(',
   loading: 'Načítání...',
-  searchPlaceholder: 'Vyhledat produkt',
+  searchPlaceholder: 'Vyhledat produkt'
 }

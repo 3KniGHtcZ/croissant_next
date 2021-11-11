@@ -4,7 +4,7 @@ import { formatPrice } from '@utils/utils'
 import Image from 'next/image'
 import { useCallback, useContext } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { ImageWrapper, Item, LeftSide, Price, RightSide, Remove } from './cartItem.styles'
+import { ImageWrapper, Item, LeftSide, Price, Remove, RightSide } from './cartItem.styles'
 
 interface CartItemPropsType {
   id: number

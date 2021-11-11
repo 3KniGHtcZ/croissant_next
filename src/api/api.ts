@@ -20,19 +20,15 @@ type UseProductsType = {
 export const useProductInfo = (id: number) => {
   const queryClient = useQueryClient()
 
-  return queryClient
-    .getQueryData<ProductType[]>(QUERY.PRODUCTS)
-    ?.filter((product) => product.id === id)[0] as ProductType
+  return queryClient.getQueryData<ProductType[]>(QUERY.PRODUCTS)?.filter(product => product.id === id)[0] as ProductType
 }
 
 export const useProducts = (): UseProductsType => {
-  const { isLoading, isError, data } = useQuery(QUERY.PRODUCTS, () =>
-    fetch('./products.json').then((res) => res.json())
-  )
+  const { isLoading, isError, data } = useQuery(QUERY.PRODUCTS, () => fetch('./products.json').then(res => res.json()))
 
   return {
     isError,
     isLoading,
-    data,
+    data
   }
 }

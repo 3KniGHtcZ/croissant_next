@@ -4,9 +4,9 @@ export const Content = styled.div`
   background-color: white;
   border: 1px solid gray;
   max-height: calc(100vh - 90px);
+  max-width: 600px;
   overflow: auto;
   padding: 12px;
-  max-width: 600px;
 
   @media (max-width: 480px) {
     max-height: calc(100vh - 210px);
@@ -35,8 +35,8 @@ export const CartButton = styled.button`
   cursor: pointer;
   font-size: 24px;
   font-weight: bold;
-  padding: 8px;
   margin: 0 16px;
+  padding: 8px;
   white-space: nowrap;
 `
 
