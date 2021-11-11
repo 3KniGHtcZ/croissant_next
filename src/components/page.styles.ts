@@ -9,7 +9,7 @@ export const Content = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   justify-items: center;
-  margin-top: 60px;
+  margin-top: 70px;
   row-gap: 12px;
   width: 100%;
 
@@ -34,18 +34,6 @@ export const Header = styled.header`
   @media (max-width: 480px) {
     height: 180px;
     flex-direction: column;
-  }
-`
-export const Logo = styled.div`
-  align-items: center;
-  display: flex;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-    width: 100%
   }
 `
 

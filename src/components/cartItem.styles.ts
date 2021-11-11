@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const RemoveButton = styled.button`
+export const Remove = styled.button`
   background: none;
   border: none;
   cursor: pointer;
@@ -16,6 +16,7 @@ export const Item = styled.div`
 `
 
 export const RightSide = styled.div`
+  display: flex;
   padding-left: 12px;
   white-space: nowrap;
 `
@@ -29,7 +30,7 @@ export const ImageWrapper = styled.div`
   position: relative;
 `
 
-export const Price = styled.span`
+export const Price = styled.div`
   font-weight: bold;
   margin-right: 16px;
 `

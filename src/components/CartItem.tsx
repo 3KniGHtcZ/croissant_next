@@ -4,8 +4,7 @@ import { formatPrice } from '@utils/utils'
 import Image from 'next/image'
 import { useCallback, useContext } from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { ImageWrapper, Item, LeftSide, Price, RightSide } from './cartItem.styles'
-import { Remove } from './product.styles'
+import { ImageWrapper, Item, LeftSide, Price, RightSide, Remove } from './cartItem.styles'
 
 interface CartItemPropsType {
   id: number
@@ -17,8 +16,7 @@ export function CartItem({ id }: CartItemPropsType) {
 
   const cartPrice = Math.round(cart[id].count * product.price.full * 100) / 100
 
-  const handleClear = useCallback(() =>
-  clearItems(id), [id, clearItems])
+  const handleClear = useCallback(() => clearItems(id), [id, clearItems])
 
   return (
     <Item>

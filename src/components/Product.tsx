@@ -4,6 +4,7 @@ import { formatPrice } from '@utils/utils'
 import Image from 'next/image'
 import { useCallback, useContext } from 'react'
 import { FaMinus, FaPlus } from 'react-icons/fa'
+import { FormattedMessage } from 'react-intl'
 import {
   Add,
   AddNew,
@@ -49,7 +50,9 @@ export const Product = ({ id }: ProductPropsType) => {
               </Add>
             </>
           ) : (
-            <AddNew onClick={handleAddItem}>Přidat do košíku</AddNew>
+            <AddNew onClick={handleAddItem}>
+              <FormattedMessage id="addToCart" />
+            </AddNew>
           )}
         </Buttons>
       </Content>

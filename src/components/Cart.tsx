@@ -33,7 +33,6 @@ export const Cart = () => {
               ))}
               <CartOverview>
                 <FormattedMessage id="cartFinalPrice" values={{ value: finalOverview }} />
-                {`Celková cena: ${finalOverview}`}
               </CartOverview>
               <Clear onClick={handleClearCart}>
                 <FaTrash size={16} style={{ marginRight: '8px' }} />
@@ -41,7 +40,7 @@ export const Cart = () => {
               </Clear>
             </>
           ) : (
-            'Košík je prázdný'
+            <FormattedMessage id="cartEmpty" />
           )}
         </Content>
       )}

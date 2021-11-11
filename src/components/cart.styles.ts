@@ -6,7 +6,7 @@ export const Content = styled.div`
   max-height: calc(100vh - 90px);
   overflow: auto;
   padding: 12px;
-  width: 400px;
+  max-width: 600px;
 
   @media (max-width: 480px) {
     max-height: calc(100vh - 210px);
@@ -26,7 +26,7 @@ export const Clear = styled.button`
   width: 60%;
 `
 
-export const CartButton = styled.div`
+export const CartButton = styled.button`
   background-color: #1ba9ab;
   border-radius: 4px;
   border: 2px solid black;
@@ -36,6 +36,8 @@ export const CartButton = styled.div`
   font-size: 24px;
   font-weight: bold;
   padding: 8px;
+  margin: 0 16px;
+  white-space: nowrap;
 `
 
 export const CartOverview = styled.div`
